@@ -1,0 +1,21 @@
+{
+  "name": "next-hyprtxt",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "9.0.4",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "science-calculator": "^1.1.0"
+  },
+  "main": ".next/",
+  "devDependencies": {},
+  "author": "Taylor Young",
+  "license": "MIT",
+  "description": ""
+}
