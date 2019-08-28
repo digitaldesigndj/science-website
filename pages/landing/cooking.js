@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Wrapper from "../components/layouts/wrapper";
+import Wrapper from "../../components/layouts/wrapper";
 
 const Cooking = () => (
   <Wrapper>
