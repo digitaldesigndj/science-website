@@ -22,12 +22,10 @@ const Wrapper = ({ children }) => (
     <Nav />
     {children}
     <Footer></Footer>
-    <StickyFooter>
-      {
-        // <Debug />
-      }
-      This is the Sticky Footer!
-    </StickyFooter>
+    {
+      // <Debug />
+      // <StickyFooter>This is the Sticky Footer!</StickyFooter>
+    }
   </div>
 );
 
