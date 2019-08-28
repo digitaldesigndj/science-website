@@ -1,6 +1,27 @@
 const Hapi = require("@hapi/hapi");
 const next = require("next");
 const { parse } = require("url");
+const Boom = require("boom");
+
+const { promisify } = require("util");
+const ls = promisify(require("fs").readdir);
+
+var mysql = require("mysql");
+var connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "XLR4C7NJpeb!yqA7XD!*",
+  database: "next"
+});
+
+connection.connect();
+
+connection.query("SELECT 1 + 1 AS solution", function(error, results, fields) {
+  if (error) throw error;
+  console.log("The solution is: ", results[0].solution);
+});
+
+connection.end();
 
 // Be sure to pass `true` as the second argument to `url.parse`.
 // This tells it to parse the query portion of the URL.
@@ -42,59 +63,53 @@ const { parse } = require("url");
     }
   });
 
-  const { promisify } = require("util");
-  const ls = promisify(require("fs").readdir);
+  const getPagesRecurse = async (path, prefix, array) => {
+    let result;
+    try {
+      result = await ls(path);
+    } catch (e) {
+      return Boom.notFound(e);
+    }
+    return result.map(thing => {
+      if (thing.slice(-3) === ".js") {
+        return `${prefix}/${thing.replace(".js", "")}`;
+      } else {
+        return getPagesRecurse(`./pages/landing`, "/landing", array);
+      }
+    }, array);
+  };
+
+  server.route({
+    method: "GET",
+    path: "/autoindex",
+    handler: async (request, h) => {
+      return await getPagesRecurse(`./pages`, "");
+    }
+  });
 
   // server.route({
   //   method: "GET",
-  //   path: "/autoindex",
+  //   path: "/autoindex/{folder?}",
   //   handler: async (request, h) => {
-  //     const result = await ls("./pages");
+  //     let result;
+  //     try {
+  //       if (request.params.folder) {
+  //         result = await ls(`./pages/${request.params.folder}`);
+  //       } else {
+  //         result = await ls(`./pages`);
+  //       }
+  //     } catch (e) {
+  //       return Boom.notFound(e);
+  //     }
   //     return result.map(thing => {
   //       if (thing.slice(-3) === ".js") {
   //         return `/${thing.replace(".js", "")}`;
   //       } else {
-  //         return `/autoindex/${thing}/`;
+  //         return `/${thing}/`;
   //       }
   //     });
   //   }
   // });
-  server.route({
-    method: "GET",
-    path: "/autoindex/{folder?}",
-    handler: async (request, h) => {
-      let result;
-      try {
-        if (request.params.folder) {
-          result = await ls(`./pages/${request.params.folder}`);
-        } else {
-          result = await ls(`./pages`);
-        }
-      } catch (e) {
-        console.log(e);
-      }
-      console.log(result);
-      return result.map(thing => {
-        if (thing.slice(-3) === ".js") {
-          return `/${thing.replace(".js", "")}`;
-        } else {
-          return `/${thing}/`;
-        }
-      });
-    }
-  });
-
-  server.route({
-    method: "GET",
-    path: "/api/landing",
-    handler: async (request, h) => {
-      const fs = require("fs");
-      const { promisify } = require("util");
-      const ls = promisify(fs.readdir);
-      const lsArray = await ls("./pages/landing");
-      return JSON.stringify(lsArray, null, 2);
-    }
-  });
 
   server.route({
     method: "GET",

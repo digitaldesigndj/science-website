@@ -7,7 +7,7 @@ const Table = () => (
     <Head>
       <title>Table Page</title>
     </Head>
-    <table dir="ltr" border="1" cellspacing="0" cellpadding="2">
+    <table dir="ltr" border="1" cellSpacing="0" cellPadding="2">
       <colgroup>
         <col width="100" /> <col width="100" /> <col width="100" />
         <col width="100" /> <col width="100" /> <col width="100" />
@@ -16,7 +16,7 @@ const Table = () => (
       <tbody>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"Friendly Farms Mass Balance"}'
           >
             <div>
@@ -26,7 +26,7 @@ const Table = () => (
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"The weights and THC concentrations of the biomass in for extraction, the oil produced from that extraction, and the spent biomass after extraction."}'
           >
             <div>
@@ -40,7 +40,7 @@ const Table = () => (
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"Most of our toll-processing contracts are based on an expected yield of 12% by weight."}'
           >
             <div>
@@ -53,7 +53,7 @@ const Table = () => (
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"We are confident based on the material provided that our processes meet and exceed expectations for industrial toll processing for biomass extractions."}'
           >
             <div>
@@ -66,13 +66,13 @@ const Table = () => (
           </td>
         </tr>
         <tr>
-          <td colspan="9" data-sheets-value='{"1":2,"2":"Gorilla Glue"}'>
+          <td colSpan="9" data-sheets-value='{"1":2,"2":"Gorilla Glue"}'>
             <strong>Gorilla Glue</strong>
           </td>
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"The total THC available from the biomass was 4338.46g and we recovered 3543g in the extracted oil. There was 366.2g leftover in the spent material."}'
           >
             <div>
@@ -86,7 +86,7 @@ const Table = () => (
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"The extraction efficiency was 81.66 and the recovery was 90.10%"}'
           >
             <div>
@@ -156,20 +156,20 @@ const Table = () => (
         </tr>
 
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="3"
-            rowspan="1"
+            colSpan="3"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"Extraction Yield by Weight"}'
           >
             Extraction Yield by Weight
           </td>
-          <td colspan="3" data-sheets-value='{"1":2,"2":"THC Mass In "}'>
+          <td colSpan="3" data-sheets-value='{"1":2,"2":"THC Mass In "}'>
             THC Mass In
           </td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"4203/17766"}'>4203/17766</td>
           <td
             data-sheets-value='{"1":3,"3":0.23656422379826636}'
@@ -189,22 +189,22 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="3"
-            rowspan="1"
+            colSpan="3"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"THC Extraction Efficiency"}'
           >
             THC Extraction Efficiency
           </td>
-          <td colspan="3" data-sheets-value='{"1":2,"2":"Total THC Mass Out"}'>
+          <td colSpan="3" data-sheets-value='{"1":2,"2":"Total THC Mass Out"}'>
             <div>
               <div>Total THC Mass Out</div>
             </div>
           </td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"3542.96/4338.46"}'>
             3542.96/4338.46
           </td>
@@ -229,11 +229,11 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="2"
-            rowspan="1"
+            colSpan="2"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"THC Recovery Efficiency"}'
           >
             THC Recovery Efficiency
@@ -241,8 +241,8 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"3909.17/4338.46"}'>
             3909.17/4338.46
           </td>
@@ -257,13 +257,13 @@ const Table = () => (
         </tr>
 
         <tr>
-          <td colspan="9" data-sheets-value='{"1":2,"2":"Purple Punch"}'>
+          <td colSpan="9" data-sheets-value='{"1":2,"2":"Purple Punch"}'>
             <strong>Purple Punch</strong>
           </td>
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"The total THC available from the biomass was 1663.2g and we recovered 937.49g in the extracted oil. There was 129.3g leftover in the spent material."}'
           >
             <div>
@@ -277,7 +277,7 @@ const Table = () => (
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"The extraction efficiency was 56.37% and the recovery was 64.14%"}'
           >
             <div>
@@ -358,20 +358,20 @@ const Table = () => (
         </tr>
 
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="3"
-            rowspan="1"
+            colSpan="3"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"Extraction Yield by Weight"}'
           >
             Extraction Yield by Weight
           </td>
-          <td colspan="3" data-sheets-value='{"1":2,"2":"THC Mass In "}'>
+          <td colSpan="3" data-sheets-value='{"1":2,"2":"THC Mass In "}'>
             THC Mass In
           </td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"1367/11550"}'>1367/11550</td>
           <td
             data-sheets-value='{"1":3,"3":0.11837229437229438}'
@@ -391,22 +391,22 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="3"
-            rowspan="1"
+            colSpan="3"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"THC Extraction Efficiency"}'
           >
             THC Extraction Efficiency
           </td>
-          <td colspan="3" data-sheets-value='{"1":2,"2":"Total THC Mass Out"}'>
+          <td colSpan="3" data-sheets-value='{"1":2,"2":"Total THC Mass Out"}'>
             <div>
               <div>Total THC Mass Out</div>
             </div>
           </td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"937.5/1663.2"}'>937.5/1663.2</td>
           <td
             data-sheets-value='{"1":3,"3":0.5636658489658489}'
@@ -427,11 +427,11 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="2"
-            rowspan="1"
+            colSpan="2"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"THC Recovery Efficiency"}'
           >
             THC Recovery Efficiency
@@ -439,8 +439,8 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"1066.81/1663.2"}'>
             1066.81/1663.2
           </td>
@@ -454,13 +454,13 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="9" data-sheets-value='{"1":2,"2":"Blue Dream"}'>
+          <td colSpan="9" data-sheets-value='{"1":2,"2":"Blue Dream"}'>
             <strong>Blue Dream</strong>
           </td>
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"The total THC available from the biomass was 4364g and we recovered 2985.55g in the extracted oil. There was 206.1g leftover in the spent material."}'
           >
             <div>
@@ -474,7 +474,7 @@ const Table = () => (
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"The extraction efficiency was 68.41% and the recovery was 73.13%."}'
           >
             <div>
@@ -544,20 +544,20 @@ const Table = () => (
           </td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="3"
-            rowspan="1"
+            colSpan="3"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"Extraction Yield by Weight"}'
           >
             Extraction Yield by Weight
           </td>
-          <td colspan="3" data-sheets-value='{"1":2,"2":"THC Mass In "}'>
+          <td colSpan="3" data-sheets-value='{"1":2,"2":"THC Mass In "}'>
             THC Mass In
           </td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"3368/21288 *100%"}'>
             3368/21288 *100%
           </td>
@@ -579,22 +579,22 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="3"
-            rowspan="1"
+            colSpan="3"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"THC Extraction Efficiency"}'
           >
             THC Extraction Efficiency
           </td>
-          <td colspan="3" data-sheets-value='{"1":2,"2":"Total THC Mass Out"}'>
+          <td colSpan="3" data-sheets-value='{"1":2,"2":"Total THC Mass Out"}'>
             <div>
               <div>Total THC Mass Out</div>
             </div>
           </td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"2985.55/4364"}'>2985.55/4364</td>
           <td
             data-sheets-value='{"1":3,"3":0.6841263370638218}'
@@ -615,11 +615,11 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="2"
-            rowspan="1"
+            colSpan="2"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"THC Recovery Efficiency"}'
           >
             THC Recovery Efficiency
@@ -627,8 +627,8 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"3,191.64/4364"}'>3,191.64/4364</td>
           <td
             data-sheets-value='{"1":3,"3":0.7313491627024502}'
@@ -640,13 +640,13 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="9" data-sheets-value='{"1":2,"2":"Nepali Pink"}'>
+          <td colSpan="9" data-sheets-value='{"1":2,"2":"Nepali Pink"}'>
             <strong>Nepali Pink</strong>
           </td>
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"The total THC available from the biomass was 4379.7g and we recovered 3189g in the extracted oil. There was 261.93g leftover in the spent material."}'
           >
             <div>
@@ -660,7 +660,7 @@ const Table = () => (
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"The extraction efficiency was 72.81 and the recovery was 78.79"}'
           >
             <div>
@@ -730,20 +730,20 @@ const Table = () => (
         </tr>
 
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="3"
-            rowspan="1"
+            colSpan="3"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"Extraction Yield by Weight"}'
           >
             Extraction Yield by Weight
           </td>
-          <td colspan="3" data-sheets-value='{"1":2,"2":"THC Mass In "}'>
+          <td colSpan="3" data-sheets-value='{"1":2,"2":"THC Mass In "}'>
             THC Mass In
           </td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"3880/24184"}'>3880/24184</td>
           <td
             data-sheets-value='{"1":3,"3":0.16042011247105523}'
@@ -763,22 +763,22 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="3"
-            rowspan="1"
+            colSpan="3"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"THC Extraction Efficiency"}'
           >
             THC Extraction Efficiency
           </td>
-          <td colspan="3" data-sheets-value='{"1":2,"2":"Total THC Mass Out"}'>
+          <td colSpan="3" data-sheets-value='{"1":2,"2":"Total THC Mass Out"}'>
             <div>
               <div>Total THC Mass Out</div>
             </div>
           </td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"3189/4379.7"}'>3189/4379.7</td>
           <td
             data-sheets-value='{"1":3,"3":0.7281354635627136}'
@@ -801,11 +801,11 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="2"
-            rowspan="1"
+            colSpan="2"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"THC Recovery Efficiency"}'
           >
             THC Recovery Efficiency
@@ -813,8 +813,8 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"3450.96/4379.2"}'>
             3450.96/4379.2
           </td>
@@ -827,9 +827,19 @@ const Table = () => (
           </td>
           <td></td>
         </tr>
+      </tbody>
+    </table>
+    <h1>New</h1>
+    <table dir="ltr" border="1" cellSpacing="0" cellPadding="2">
+      <colgroup>
+        <col width="100" /> <col width="100" /> <col width="100" />
+        <col width="100" /> <col width="100" /> <col width="100" />
+        <col width="100" /> <col width="100" /> <col width="100" />
+      </colgroup>
+      <tbody>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"Pineapple Upside Down"}'
           >
             <strong>Pineapple Upside Down</strong>
@@ -837,7 +847,7 @@ const Table = () => (
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"The total THC available from the biomass was 1504.97g and we recovered 1060.74g in the extracted oil. There was 102.72g leftover in the spent material."}'
           >
             <div>
@@ -851,7 +861,7 @@ const Table = () => (
         </tr>
         <tr>
           <td
-            colspan="9"
+            colSpan="9"
             data-sheets-value='{"1":2,"2":"The extraction efficiency was 70.48% and the recovery was 77.31%."}'
           >
             <div>
@@ -922,20 +932,20 @@ const Table = () => (
         </tr>
 
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="3"
-            rowspan="1"
+            colSpan="3"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"Extraction Yield by Weight"}'
           >
             Extraction Yield by Weight
           </td>
-          <td colspan="3" data-sheets-value='{"1":2,"2":"THC Mass In "}'>
+          <td colSpan="3" data-sheets-value='{"1":2,"2":"THC Mass In "}'>
             THC Mass In
           </td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"1280/9121 *100%"}'>
             1280/9121 *100%
           </td>
@@ -957,22 +967,22 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="3"
-            rowspan="1"
+            colSpan="3"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"THC Extraction Efficiency"}'
           >
             THC Extraction Efficiency
           </td>
-          <td colspan="3" data-sheets-value='{"1":2,"2":"Total THC Mass Out"}'>
+          <td colSpan="3" data-sheets-value='{"1":2,"2":"Total THC Mass Out"}'>
             <div>
               <div>Total THC Mass Out</div>
             </div>
           </td>
         </tr>
         <tr>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"1060.736/1504.965"}'>
             1060.736/1504.965
           </td>
@@ -997,11 +1007,11 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
+          <td colSpan="3"></td>
           <td
-            colspan="2"
-            rowspan="1"
+            colSpan="2"
+            rowSpan="1"
             data-sheets-value='{"1":2,"2":"THC Recovery Efficiency"}'
           >
             THC Recovery Efficiency
@@ -1009,8 +1019,8 @@ const Table = () => (
           <td></td>
         </tr>
         <tr>
-          <td colspan="3"></td>
-          <td colspan="3"></td>
+          <td colSpan="3"></td>
+          <td colSpan="3"></td>
           <td data-sheets-value='{"1":2,"2":"1163.45/1504.97"}'>
             1163.45/1504.97
           </td>
