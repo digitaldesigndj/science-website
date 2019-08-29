@@ -1,3 +1,4 @@
+const environment = require("dotenv").config().parsed;
 const Hapi = require("@hapi/hapi");
 const next = require("next");
 const { parse } = require("url");
@@ -5,18 +6,23 @@ const Boom = require("boom");
 
 const { promisify } = require("util");
 const ls = promisify(require("fs").readdir);
+const dotenv = require("dotenv");
+const mysql = require("mysql");
 
-var mysql = require("mysql");
-var connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "XLR4C7NJpeb!yqA7XD!*",
-  database: "next"
+const connection = mysql.createConnection({
+  host: environment.MYSQL_HOST,
+  user: environment.MYSQL_USER,
+  password: environment.MYSQL_PASS,
+  database: `next`
 });
 
 connection.connect();
 
-connection.query("SELECT 1 + 1 AS solution", function(error, results, fields) {
+connection.query("SELECT 99721 % 3 AS solution", function(
+  error,
+  results,
+  fields
+) {
   if (error) throw error;
   console.log("The solution is: ", results[0].solution);
 });
