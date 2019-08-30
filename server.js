@@ -1,33 +1,60 @@
 const environment = require("dotenv").config().parsed;
 const Hapi = require("@hapi/hapi");
+const Joi = require("joi");
+const Boom = require("boom");
 const next = require("next");
 const { parse } = require("url");
-const Boom = require("boom");
 
 const { promisify } = require("util");
 const ls = promisify(require("fs").readdir);
+
 const dotenv = require("dotenv");
 const mysql = require("mysql");
 
-const connection = mysql.createConnection({
-  host: environment.MYSQL_HOST,
-  user: environment.MYSQL_USER,
-  password: environment.MYSQL_PASS,
-  database: `next`
-});
+const clientTableSchema = {
+  created: Joi.string()
+    .min(24)
+    .max(24)
+    .required(),
+  id: Joi.number()
+    .integer()
+    .min(0)
+    .required(),
+  name: Joi.string()
+    .min(3)
+    .max(64)
+    .required(),
+  password: Joi.string()
+    .min(8)
+    .max(64)
+    .required(),
+  slug: Joi.string()
+    .min(3)
+    .max(64)
+    .required()
+};
 
-connection.connect();
-
-connection.query("SELECT 99721 % 3 AS solution", function(
-  error,
-  results,
-  fields
-) {
-  if (error) throw error;
-  console.log("The solution is: ", results[0].solution);
-});
-
-connection.end();
+class Database {
+  constructor(config) {
+    this.connection = mysql.createConnection(config);
+  }
+  query(sql, args) {
+    return new Promise((resolve, reject) => {
+      this.connection.query(sql, args, (err, rows) => {
+        if (err) return reject(err);
+        resolve(rows);
+      });
+    });
+  }
+  close() {
+    return new Promise((resolve, reject) => {
+      this.connection.end(err => {
+        if (err) return reject(err);
+        resolve();
+      });
+    });
+  }
+}
 
 // Be sure to pass `true` as the second argument to `url.parse`.
 // This tells it to parse the query portion of the URL.
@@ -44,7 +71,7 @@ connection.end();
 
 (async () => {
   const app = next({ dev: process.env.NODE_ENV !== "production" });
-  const handler = app.getRequestHandler();
+  const nextRenderHandler = app.getRequestHandler();
   const server = Hapi.server({
     port: 3000,
     host: "localhost",
@@ -59,15 +86,18 @@ connection.end();
       }
     }
   });
-
-  server.route({
-    method: "GET",
-    path: "/{p*}",
-    handler: async ({ raw, url }, h) => {
-      await handler(raw.req, raw.res, url);
-      return h.close;
-    }
+  const db = new Database({
+    host: environment.MYSQL_HOST,
+    user: environment.MYSQL_USER,
+    password: environment.MYSQL_PASS,
+    database: `next`
   });
+
+  const getWholeTable = table => {
+    return async (request, h) => {
+      return await db.query(`SELECT * FROM ${table}`);
+    };
+  };
 
   const getPagesRecurse = async (path, prefix, array) => {
     let result;
@@ -122,6 +152,79 @@ connection.end();
     path: "/hi",
     handler: (request, h) => {
       return "Hello World!";
+    }
+  });
+
+  const tables = [
+    "clients",
+    "extractions",
+    "ovens",
+    "packages",
+    "pans",
+    "socks"
+  ];
+
+  tables.map(table => {
+    server.route({
+      method: "GET",
+      path: `/mysql/${table}`,
+      handler: getWholeTable(table)
+    });
+    server.route({
+      method: "GET",
+      path: `/mysql/${table}/read/{id}`,
+      config: {
+        validate: {
+          params: {
+            id: Joi.number().required()
+          }
+        },
+        handler: async (request, h) => {
+          return await db.query(`SELECT * FROM ${table} WHERE id = ?`, [
+            request.params.id
+          ]);
+        }
+      }
+    });
+    return null;
+  });
+
+  server.route({
+    method: "POST",
+    path: `/mysql/clients/update/{id}`,
+    config: {
+      validate: {
+        params: {
+          id: clientTableSchema.id
+        },
+        payload: clientTableSchema
+      },
+      handler: async (request, h) => {
+        console.log(request.payload);
+        const table = "clients";
+        const { name, password, slug, id } = request.payload;
+        console.log("POST", `/mysql/${table}/update/${id}`);
+
+        return await db.query(
+          `UPDATE clients SET name = ?, password = ?, slug = ? WHERE id = ?`,
+          [name, password, slug, id]
+        );
+      }
+    }
+  });
+
+  // created: "2019-08-29T19:46:41.000Z"
+  // id: 3
+  // name: "Friendly Farms"
+  // password: "cruzscience"
+  // slug: "friendly-farms"
+
+  server.route({
+    method: "GET",
+    path: "/{p*}",
+    handler: async ({ raw, url }, h) => {
+      await nextRenderHandler(raw.req, raw.res, url);
+      return h.close;
     }
   });
 

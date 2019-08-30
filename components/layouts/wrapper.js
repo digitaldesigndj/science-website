@@ -11,15 +11,17 @@ const Footer = () => {
       <div className="footer">
         <Container>
           Regular Footer Here
-          <Debug />
+          {
+            //<Debug />
+          }
         </Container>
       </div>
       <style jsx>{`
         .footer {
-          width: "100%";
-          background: "#c0f";
-          margin: "15px 0";
-          padding: "15px 0";
+          width: 100%;
+          background: #c0f;
+          margin: 15px 0;
+          padding: 15px 0;
         }
       `}</style>
     </React.Fragment>

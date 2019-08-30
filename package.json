@@ -11,6 +11,8 @@
     "@hapi/hapi": "^18.3.2",
     "boom": "^7.3.0",
     "dotenv": "^8.1.0",
+    "joi": "^14.3.1",
+    "joi-browser": "^13.4.0",
     "mysql": "^2.17.1",
     "next": "9.0.4",
     "react": "16.9.0",
@@ -21,5 +23,13 @@
   "devDependencies": {},
   "author": "Taylor Young",
   "license": "MIT",
-  "description": ""
+  "description": "",
+  "nodemonConfig": {
+    "ignore": [
+      "pages/*",
+      "components/*",
+      "static/*"
+    ],
+    "delay": "2500"
+  }
 }
