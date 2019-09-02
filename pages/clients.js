@@ -47,7 +47,7 @@ const Taylor = () => (
       This is the clients page. Secure Area.
       <p>Get Client info here and display it in a table.</p>
       <FetchTable />
-      <Link>
+      <Link href="/client/create">
         <Button variant="contained" color="primary">
           Add New
         </Button>

@@ -1,7 +1,7 @@
 const environment = require("dotenv").config().parsed;
 const Hapi = require("@hapi/hapi");
-const Joi = require("joi");
-const Boom = require("boom");
+const Joi = require("@hapi/joi");
+const Boom = require("@hapi/boom");
 const next = require("next");
 const { parse } = require("url");
 
@@ -11,28 +11,29 @@ const ls = promisify(require("fs").readdir);
 const dotenv = require("dotenv");
 const mysql = require("mysql");
 
-const clientTableSchema = {
-  created: Joi.string()
-    .min(24)
-    .max(24)
-    .required(),
-  id: Joi.number()
-    .integer()
-    .min(0)
-    .required(),
-  name: Joi.string()
-    .min(3)
-    .max(64)
-    .required(),
-  password: Joi.string()
-    .min(8)
-    .max(64)
-    .required(),
-  slug: Joi.string()
-    .min(3)
-    .max(64)
-    .required()
-};
+const clientTableSchema = require("./schema/client");
+// {
+//   created: Joi.string()
+//     .min(24)
+//     .max(24)
+//     .required(),
+//   id: Joi.number()
+//     .integer()
+//     .min(0)
+//     .required(),
+//   name: Joi.string()
+//     .min(3)
+//     .max(64)
+//     .required(),
+//   password: Joi.string()
+//     .min(8)
+//     .max(64)
+//     .required(),
+//   slug: Joi.string()
+//     .min(3)
+//     .max(64)
+//     .required()
+// };
 
 class Database {
   constructor(config) {
