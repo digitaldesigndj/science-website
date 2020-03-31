@@ -14,7 +14,7 @@
     "dotenv": "^8.1.0",
     "joi-browser": "^13.4.0",
     "mysql": "^2.17.1",
-    "next": "9.0.4",
+    "next": "9.3.2",
     "react": "16.9.0",
     "react-dom": "16.9.0",
     "science-calculator": "^1.1.0"
